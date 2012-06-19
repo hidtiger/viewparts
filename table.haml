@@ -1,0 +1,12 @@
+:ruby
+ head, *row = db.execute2 "select * from ?", table
+%table
+ %thead
+  %tr
+   - head.each do |v|
+    %th=v
+ %tbody
+  - row.each do |v|
+   %tr
+    - v.each do |vv|
+     %td=vv 
